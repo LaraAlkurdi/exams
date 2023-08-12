@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
             navigatorObservers: [BotToastNavigatorObserver()],
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
+              fontFamily: 'Alexandria',
               primarySwatch: Colors.blue,
             ),
             home: SplashScreenView()));

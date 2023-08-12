@@ -37,7 +37,9 @@ class _LoginViewState extends State<LoginView> {
                     textColor: AppColors.mainTextColor,
                     textsize: screenWidth(18)),
               ),
-              CustomImages(imageName: 'Login'),
+              CustomImages(
+                imageName: 'Login',
+              ),
               SizedBox(
                 height: screenHeight(30),
               ),
