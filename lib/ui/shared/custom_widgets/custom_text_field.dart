@@ -1,47 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:impty_project/ui/shared/colors.dart';
+import 'package:impty_project/ui/shared/utils.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key,
-      required this.hintext,
-      this.controller,
-      this.validator,
-      this.suffexIcon,
-      this.prifexIcon});
+  const CustomTextField({
+    Key? key,
+    required this.hintext,
+    this.controller,
+    this.validator,
+    this.suffixImage,
+    this.prefixImage,
+    this.imageName,
+    this.suffixColor,
+    this.prefixColor,
+    required this.colorText,
+    this.keyboardType,
+  }) : super(key: key);
+  final Color? suffixColor;
+  final Color? prefixColor;
+  final String? imageName;
   final String hintext;
-  final IconData? suffexIcon;
-  final IconData? prifexIcon;
-  final String? Function(String?)?
-      validator; //المدقق:لفحص المدخلات التي يدخلها المستخدم نفس شغل الكونترولر
-  final TextEditingController?
-      controller; //للحصول على المدخلات التي يقوم المستخدم بادخالها
+  final Color colorText;
+  final String? suffixImage;
+  final String? prefixImage;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: size.width * 0.05, vertical: size.width * 0.01),
-      child: TextFormField(
-        validator: validator,
-        controller: controller,
-        decoration: InputDecoration(
-          suffixIcon: Icon(suffexIcon),
-          prefixIcon: Icon(prifexIcon),
-          contentPadding: EdgeInsets.symmetric(
-              vertical: size.width * 0.04, horizontal: size.width * 0.05),
-          filled: true,
-          fillColor: AppColors.mainGreyColor,
-          hintText: hintext,
-          hintStyle: TextStyle(
-              color: Color.fromRGBO(182, 183, 183, 1),
-              fontSize: size.width * 0.04),
-          border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.all(Radius.circular(25))),
+    return TextFormField(
+      validator: validator,
+      controller: controller,
+      decoration: InputDecoration(
+        suffixIcon: Transform.scale(
+            scale: 0.5,
+            child: SvgPicture.asset(
+              'assets/images/$suffixImage.svg',
+              color: suffixColor,
+              width: screenWidth(30),
+              height: screenHeight(30),
+            )),
+        prefixIcon: Transform.scale(
+          scale: 0.5,
+          child: SvgPicture.asset(
+            'assets/images/$prefixImage.svg',
+            color: prefixColor,
+          ),
+        ),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: screenHeight(50),
+          horizontal: screenWidth(60),
+        ),
+        filled: true,
+        fillColor: AppColors.mainSkyColor,
+        hintText: hintext,
+        hintStyle: TextStyle(
+          color: colorText,
+          fontSize: screenWidth(25),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.all(Radius.circular(screenWidth(50))),
         ),
       ),
+      keyboardType: keyboardType ?? TextInputType.text,
     );
   }
 }

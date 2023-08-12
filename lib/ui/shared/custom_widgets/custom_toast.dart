@@ -28,7 +28,7 @@ class CustomToast {
         break;
       case MessageType.INFO:
         imageName = 'info';
-        shadowColor = AppColors.mainblueColor;
+        shadowColor = AppColors.mainBlueColor;
         break;
       default:
         break;

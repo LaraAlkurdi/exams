@@ -8,19 +8,37 @@ class CustomText extends StatelessWidget {
     required this.textColor,
     this.fontWeight,
     required this.textsize,
+    this.textDecoration,
+    this.textAlign,
+    this.container,
   });
+
   final String text;
+  final TextAlign? textAlign;
+  final TextDecoration? textDecoration;
   final Color textColor;
   final double textsize;
   final FontWeight? fontWeight;
+  final Container? container;
   @override
   Widget build(BuildContext context) {
-    return Text(text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: textsize,
-          fontWeight: fontWeight ?? FontWeight.bold,
-          color: textColor, //عامل main black color
-        ));
+    return Row(
+      children: [
+        if (container != null) ...[
+          container!,
+          SizedBox(width: screenWidth(60)),
+        ],
+        Text(
+          text,
+          textAlign: textAlign,
+          style: TextStyle(
+            decoration: textDecoration,
+            fontSize: textsize,
+            fontWeight: fontWeight ?? FontWeight.bold,
+            color: textColor,
+          ),
+        ),
+      ],
+    );
   }
 }
