@@ -27,7 +27,8 @@ class _ProfileViewState extends State<ProfileView> {
     return Padding(
       padding: EdgeInsets.only(top: screenHeight(6)),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: screenWidth(20)),
+        padding: EdgeInsets.symmetric(
+            horizontal: screenWidth(20), vertical: screenHeight(20)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

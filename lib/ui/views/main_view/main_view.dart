@@ -64,19 +64,14 @@ class _MainViewState extends State<MainView> {
               text: 'الاسئلة المهمة',
               imageName: 'ic_back',
             ),
-            // PageWithImage(
-            //   page: ProfileView(),
-            //   text: 'الملف الشخصي',
-            //   imageName: 'ic_user',
-            // ),
+            PageWithImage(
+              page: ProfileView(),
+              text: 'الملف الشخصي',
+              imageName: 'ic_user',
+            ),
             // PageWithImage(
             //   page: EditProfileView(),
             // ),
-            PageWithImage(
-              page: isEditProfile ? EditProfileView() : ProfileView(),
-              text: isEditProfile ? 'تعديل الملف الشخصي' : 'الملف الشخصي',
-              imageName: 'ic_user',
-            ),
           ],
         ),
       ),
