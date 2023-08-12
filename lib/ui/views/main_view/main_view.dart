@@ -18,7 +18,6 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  bool isEditProfile = false;
   BottomNavigationEnum selected = BottomNavigationEnum.HOME;
   PageController controller = PageController(initialPage: 1);
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -42,7 +41,6 @@ class _MainViewState extends State<MainView> {
               selected = selectedEnum;
             });
           },
-          isEditProfile: false,
         ),
         body: PageView(
           physics: NeverScrollableScrollPhysics(),

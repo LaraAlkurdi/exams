@@ -21,7 +21,6 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  bool isEditProfile = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -69,11 +68,8 @@ class _ProfileViewState extends State<ProfileView> {
             SizedBox(
               height: screenHeight(20),
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {
-                setState(() {
-                  isEditProfile = true;
-                });
                 Get.to(EditProfileView());
               },
               child: Row(
@@ -97,7 +93,7 @@ class _ProfileViewState extends State<ProfileView> {
             SizedBox(
               height: screenHeight(40),
             ),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 Get.defaultDialog(
                   title: '',

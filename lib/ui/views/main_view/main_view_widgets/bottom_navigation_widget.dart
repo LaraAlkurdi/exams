@@ -9,13 +9,12 @@ import 'package:impty_project/ui/views/main_view/edit_profile/edit_profile.dart'
 class BottomNavigationWidget extends StatefulWidget {
   final BottomNavigationEnum bottomNavigationEnum;
   final Function(BottomNavigationEnum, int) onTap;
-  final bool isEditProfile;
-  BottomNavigationWidget(
-      {Key? key,
-      required this.bottomNavigationEnum,
-      required this.onTap,
-      required this.isEditProfile})
-      : super(key: key);
+
+  BottomNavigationWidget({
+    Key? key,
+    required this.bottomNavigationEnum,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   State<BottomNavigationWidget> createState() => _BottomNavigationWidgetState();
@@ -44,11 +43,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   isSelected: widget.bottomNavigationEnum ==
                       BottomNavigationEnum.PROFILE,
                   onTap: () {
-                    if (widget.isEditProfile) {
-                      Get.to(EditProfileView());
-                    } else {
-                      widget.onTap(BottomNavigationEnum.PROFILE, 3);
-                    }
+                    widget.onTap(BottomNavigationEnum.PROFILE, 3);
                   },
                 ),
                 navItem(
