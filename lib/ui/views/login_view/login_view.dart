@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:impty_project/core/utils/string_util.dart';
 import 'package:impty_project/ui/shared/colors.dart';
@@ -8,6 +9,7 @@ import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text_field.dart';
 import 'package:impty_project/ui/shared/utils.dart';
 import 'package:impty_project/ui/views/login_view/login_controller.dart';
+import 'package:impty_project/ui/views/main_view/main_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -88,7 +90,11 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(
                 height: screenHeight(20),
               ),
-              CustomButton(text: 'تسجيل الدخول'),
+              CustomButton(
+                  onPressed: () {
+                    Get.to(MainView());
+                  },
+                  text: 'تسجيل الدخول'),
               SizedBox(
                 height: screenHeight(70),
               ),

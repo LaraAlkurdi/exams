@@ -6,6 +6,7 @@ import 'package:impty_project/ui/shared/custom_widgets/custom_icon.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_images.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/utils.dart';
+import 'package:impty_project/ui/views/login_view/login_view.dart';
 import 'package:impty_project/ui/views/main_view/about_as_view/about_as_view.dart';
 import 'package:impty_project/ui/views/main_view/edit_profile/edit_profile.dart';
 import 'package:impty_project/ui/views/main_view/profile_view/profile_controller.dart';
@@ -145,7 +146,11 @@ class _ProfileViewState extends State<ProfileView> {
             SizedBox(
               height: screenHeight(15),
             ),
-            CustomButton(text: 'تسجيل الخروج'),
+            CustomButton(
+                onPressed: () {
+                  Get.off(LoginView());
+                },
+                text: 'تسجيل الخروج'),
           ],
         ),
       ),
