@@ -10,6 +10,7 @@ import 'package:impty_project/ui/shared/custom_widgets/custom_text_field.dart';
 import 'package:impty_project/ui/shared/utils.dart';
 import 'package:impty_project/ui/views/login_view/login_controller.dart';
 import 'package:impty_project/ui/views/main_view/main_view.dart';
+import 'package:impty_project/ui/views/signup_view/signup_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -99,7 +100,9 @@ class _LoginViewState extends State<LoginView> {
                 height: screenHeight(70),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.to(SignUpView());
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
