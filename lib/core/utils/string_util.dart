@@ -33,6 +33,12 @@ class MapUtil {
     return regExp.hasMatch(value);
   }
 
+  static bool isName(String value) {
+    RegExp regExp =
+        RegExp(r"^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$");
+    return regExp.hasMatch(value);
+  }
+
   static bool isEmail(String value) {
     RegExp regExp = new RegExp(
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
