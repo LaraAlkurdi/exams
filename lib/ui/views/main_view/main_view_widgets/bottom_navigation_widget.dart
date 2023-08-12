@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:impty_project/core/enums/bottum_navigation.dart';
 import 'package:impty_project/ui/shared/colors.dart';
 import 'package:impty_project/ui/shared/utils.dart';
+import 'package:impty_project/ui/views/main_view/edit_profile/edit_profile.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   final BottomNavigationEnum bottomNavigationEnum;
   final Function(BottomNavigationEnum, int) onTap;
+  final bool isEditProfile;
   BottomNavigationWidget(
-      {Key? key, required this.bottomNavigationEnum, required this.onTap})
+      {Key? key,
+      required this.bottomNavigationEnum,
+      required this.onTap,
+      required this.isEditProfile})
       : super(key: key);
 
   @override
@@ -38,7 +44,11 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   isSelected: widget.bottomNavigationEnum ==
                       BottomNavigationEnum.PROFILE,
                   onTap: () {
-                    widget.onTap(BottomNavigationEnum.PROFILE, 3);
+                    if (widget.isEditProfile) {
+                      Get.to(EditProfileView());
+                    } else {
+                      widget.onTap(BottomNavigationEnum.PROFILE, 3);
+                    }
                   },
                 ),
                 navItem(

@@ -18,7 +18,6 @@ class EditProfileView extends StatefulWidget {
 
 class _EditProfileViewState extends State<EditProfileView> {
   EditController controller = Get.put(EditController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

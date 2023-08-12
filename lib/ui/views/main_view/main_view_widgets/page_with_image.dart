@@ -51,16 +51,18 @@ import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/utils.dart';
 
 class PageWithImage extends StatelessWidget {
-  const PageWithImage(
-      {super.key,
-      required this.page,
-      this.text,
-      this.imageName,
-      this.textColor});
+  const PageWithImage({
+    super.key,
+    required this.page,
+    this.text,
+    this.imageName,
+    this.textColor,
+  });
   final Widget page;
   final String? text;
   final String? imageName;
   final Color? textColor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

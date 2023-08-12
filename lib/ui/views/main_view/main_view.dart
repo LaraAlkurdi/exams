@@ -9,13 +9,16 @@ import 'package:impty_project/ui/views/main_view/notification_view/notification_
 import 'package:impty_project/ui/views/main_view/profile_view/profile_view.dart';
 
 class MainView extends StatefulWidget {
-  MainView({Key? key}) : super(key: key);
+  MainView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<MainView> createState() => _MainViewState();
 }
 
 class _MainViewState extends State<MainView> {
+  bool isEditProfile = false;
   BottomNavigationEnum selected = BottomNavigationEnum.HOME;
   PageController controller = PageController(initialPage: 1);
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -39,6 +42,7 @@ class _MainViewState extends State<MainView> {
               selected = selectedEnum;
             });
           },
+          isEditProfile: false,
         ),
         body: PageView(
           physics: NeverScrollableScrollPhysics(),
@@ -60,13 +64,18 @@ class _MainViewState extends State<MainView> {
               text: 'الاسئلة المهمة',
               imageName: 'ic_back',
             ),
+            // PageWithImage(
+            //   page: ProfileView(),
+            //   text: 'الملف الشخصي',
+            //   imageName: 'ic_user',
+            // ),
+            // PageWithImage(
+            //   page: EditProfileView(),
+            // ),
             PageWithImage(
-              page: ProfileView(),
-              text: 'الملف الشخصي',
+              page: isEditProfile ? EditProfileView() : ProfileView(),
+              text: isEditProfile ? 'تعديل الملف الشخصي' : 'الملف الشخصي',
               imageName: 'ic_user',
-            ),
-            PageWithImage(
-              page: EditProfileView(),
             ),
           ],
         ),

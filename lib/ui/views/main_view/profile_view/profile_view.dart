@@ -3,23 +3,25 @@ import 'package:get/get.dart';
 import 'package:impty_project/ui/shared/colors.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_button.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_icon.dart';
-import 'package:impty_project/ui/shared/custom_widgets/custom_images.dart';
+
 import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/utils.dart';
 import 'package:impty_project/ui/views/login_view/login_view.dart';
 import 'package:impty_project/ui/views/main_view/about_as_view/about_as_view.dart';
 import 'package:impty_project/ui/views/main_view/edit_profile/edit_profile.dart';
-import 'package:impty_project/ui/views/main_view/profile_view/profile_controller.dart';
 import 'package:impty_project/ui/views/main_view/send_feed_view/send_feed_view.dart';
 
 class ProfileView extends StatefulWidget {
-  const ProfileView({super.key});
+  const ProfileView({
+    super.key,
+  });
 
   @override
   State<ProfileView> createState() => _ProfileViewState();
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  bool isEditProfile = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -68,6 +70,9 @@ class _ProfileViewState extends State<ProfileView> {
             ),
             InkWell(
               onTap: () {
+                setState(() {
+                  isEditProfile = true;
+                });
                 Get.to(EditProfileView());
               },
               child: Row(
