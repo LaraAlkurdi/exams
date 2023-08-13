@@ -5,6 +5,7 @@ import 'package:impty_project/core/enums/message_type.dart';
 import 'package:impty_project/core/services/base_controller.dart';
 import 'package:impty_project/core/utils/general_util.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_toast.dart';
+import 'package:impty_project/ui/views/main_view/main_view.dart';
 
 class LoginController extends BaseController {
   RxBool isLoding = false.obs;
@@ -28,7 +29,7 @@ class LoginController extends BaseController {
           );
         }, (r) {
           storage.setTokenInfo(r);
-          // Get.off(MainView());
+          Get.off(MainView());
         });
       }));
     }

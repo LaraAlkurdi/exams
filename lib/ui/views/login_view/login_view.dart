@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:impty_project/core/utils/string_util.dart';
@@ -91,11 +92,18 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(
                 height: screenHeight(20),
               ),
-              CustomButton(
-                  onPressed: () {
-                    Get.to(MainView());
-                  },
-                  text: 'تسجيل الدخول'),
+              Obx(() {
+                return controller.isLoding.value
+                    ? SpinKitThreeBounce(
+                        color: AppColors.mainOrangeColor,
+                      )
+                    : CustomButton(
+                        onPressed: () {
+                          // controller.Login();
+                          Get.to(MainView());
+                        },
+                        text: 'تسجيل الدخول');
+              }),
               SizedBox(
                 height: screenHeight(70),
               ),
