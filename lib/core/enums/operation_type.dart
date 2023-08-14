@@ -1,3 +1,4 @@
 enum OperationType {
   NONE,
+  CATEGORY,
 }

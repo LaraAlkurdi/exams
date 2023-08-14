@@ -28,41 +28,42 @@ class _ProfileViewState extends State<ProfileView> {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: screenWidth(20), vertical: screenHeight(20)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
+          shrinkWrap: true,
           children: [
             Center(
-              child: Container(
-                width: screenWidth(1),
-                height: screenHeight(5.5),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      width: screenWidth(150), color: AppColors.mainBlueColor),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.person_sharp,
-                  color: AppColors.mainBlueColor,
-                  size: screenHeight(8),
-                ),
-                // CustomImages(
-                //   imageName: 'ic_user',
-                //   imageSize: screenWidth(4.7),
-                //   imageColor: AppColors.mainBlueColor,
-                // ),
-              ),
-            ),
-            SizedBox(
-              height: screenHeight(90),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth(3.3)),
-              child: CustomText(
-                textAlign: TextAlign.center,
-                text: 'اسم المستخدم',
-                textColor: AppColors.mainTextsColor,
-                textsize: screenWidth(22),
-                fontWeight: FontWeight.bold,
+              child: Column(
+                children: [
+                  Container(
+                    width: screenWidth(1),
+                    height: screenHeight(5.5),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          width: screenWidth(150),
+                          color: AppColors.mainBlueColor),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.person_sharp,
+                      color: AppColors.mainBlueColor,
+                      size: screenHeight(8),
+                    ),
+                    // CustomImages(
+                    //   imageName: 'ic_user',
+                    //   imageSize: screenWidth(4.7),
+                    //   imageColor: AppColors.mainBlueColor,
+                    // ),
+                  ),
+                  SizedBox(
+                    height: screenHeight(90),
+                  ),
+                  CustomText(
+                    text: 'اسم المستخدم',
+                    textColor: AppColors.mainTextsColor,
+                    textsize: screenWidth(22),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ],
               ),
             ),
             SizedBox(

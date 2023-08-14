@@ -23,6 +23,9 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: container != null
+          ? MainAxisAlignment.start
+          : MainAxisAlignment.center,
       children: [
         if (container != null) ...[
           container!,
