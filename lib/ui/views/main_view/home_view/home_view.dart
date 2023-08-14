@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:impty_project/ui/shared/colors.dart';
+import 'package:impty_project/ui/shared/custom_widgets/custom_text_field.dart';
 import 'package:impty_project/ui/shared/utils.dart';
 import 'package:impty_project/ui/views/main_view/home_view/home_controller.dart';
 import 'package:impty_project/ui/views/main_view/home_view/slider_image.dart';
@@ -29,6 +30,11 @@ class _HomeViewState extends State<HomeView> {
           children: [
             SizedBox(
               height: screenHeight(8),
+            ),
+            CustomTextField(
+              hintext: 'بحث',
+              colorText: AppColors.mainGreyColor,
+              prefixImage: 'ic_search',
             ),
             Sliderimage(),
           ],

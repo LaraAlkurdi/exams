@@ -86,7 +86,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                     prefixColor: AppColors.mainPurpleColor,
                     suffixImage: 'ic_edit',
                     suffixColor: AppColors.mainPurpleColor,
-                    controller: controller.userController,
+                    controller: controller.passwordController,
                     validator: (value) {
                       if (value!.isEmpty || MapUtil.isValidNumber(value)) {
                         return 'please check your Number';
