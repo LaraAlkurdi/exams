@@ -15,7 +15,6 @@ class SignUpController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-    // قم بتعبئة القائمة بالعناصر الوهمية
     items.assignAll([
       Item(text: 'نص 1', isSelected: false),
       Item(text: 'نص 2', isSelected: false),
@@ -27,17 +26,8 @@ class SignUpController extends BaseController {
   }
 
   void selectItem(int index) {
-    List<Item> updatedItems = [];
-
     for (var i = 0; i < items.length; i++) {
-      updatedItems.add(
-        Item(
-          text: items[i].text,
-          isSelected: (i == index),
-        ),
-      );
+      items[i].isSelected.value = (i == index);
     }
-
-    items.assignAll(updatedItems);
   }
 }

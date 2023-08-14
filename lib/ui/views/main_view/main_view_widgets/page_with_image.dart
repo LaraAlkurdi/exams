@@ -71,10 +71,10 @@ class PageWithImage extends StatelessWidget {
           Stack(
             children: [
               ClipPath(
-                clipper: LandingClipper(),
+                clipper: LClipper(),
                 child: Container(
                   width: screenWidth(1),
-                  height: screenHeight(4.5),
+                  height: screenHeight(5.9),
                   alignment: Alignment.bottomCenter,
                   child: SvgPicture.asset(
                     'assets/images/Background objects.svg',
@@ -115,7 +115,7 @@ class PageWithImage extends StatelessWidget {
   }
 }
 
-class LandingClipper extends CustomClipper<Path> {
+class LClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path_0 = Path();
